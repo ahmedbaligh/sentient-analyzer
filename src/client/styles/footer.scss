@@ -1,0 +1,12 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  margin-top: 70px;
+
+  a {
+    text-decoration: none;
+    color: #ff8c3a;
+    cursor: pointer;
+  }
+}

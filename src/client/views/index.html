@@ -7,28 +7,34 @@
 
   <body>
     <header>
-      <div class="">Logo</div>
-      <div class="">navigation</div>
+      <div class="logo">Sentient Analyzer</div>
+      <div class="nav-toggler">
+        <hr />
+        <hr />
+        <hr />
+      </div>
     </header>
 
     <main>
+      <h1>Analyze text using Natural Language Processing</h1>
+
       <section>
         <form id="form">
-          <div class="field">
-            <label for="article-url">URL</label>
+          <div class="field url" data-error="You must provide a valid URL.">
             <input
               id="article-url"
               type="url"
               name="article-url"
-              placeholder="URL of your article"
+              placeholder="URL of text to analyze"
               required
             />
+            <label for="article-url">URL</label>
           </div>
 
           <div class="field">
             <label for="lang">Language</label>
             <select name="lang" id="lang">
-              <option value="" selected disabled>
+              <option value="auto" selected disabled>
                 Select a Language (Optional)
               </option>
               <option value="en">English</option>
@@ -44,14 +50,20 @@
         </form>
       </section>
 
-      <section>
-        <strong>Form Results:</strong>
+      <section class="results">
+        <strong>Analysis results</strong>
         <div id="results"></div>
       </section>
     </main>
 
     <footer>
-      <p>This is a footer</p>
+      <p class="copyrights">© 2021 | All Rights Reserved</p>
+      <p class="copyrights">
+        Created by
+        <a href="https://github.com/ahmedbaligh/" target="_blank">
+          Ahmed Baligh
+        </a>
+      </p>
     </footer>
   </body>
 </html>

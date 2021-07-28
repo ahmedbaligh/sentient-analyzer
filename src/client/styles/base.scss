@@ -1,0 +1,23 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: radial-gradient(circle, #1f3756, #141539);
+  color: #fff;
+}
+
+main {
+  flex: 2;
+  margin-top: 70px;
+  padding: 0 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.2rem;
+}
+
+section {
+  max-width: 800px;
+  margin: 50px auto;
+}
