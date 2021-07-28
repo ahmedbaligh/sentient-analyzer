@@ -9,6 +9,7 @@ const onAnalyze = async e => {
   let lang = document.querySelector('#lang').value;
 
   // Start the API request
+  resultsContainer.innerHTML = '';
   resultsContainer.classList.add('loading');
   const data = await getAnalysisResults('/analyze', {
     url: articleURL.value,
