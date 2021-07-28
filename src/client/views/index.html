@@ -2,12 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <title>Test</title>
-    <link rel="stylesheet" href="/styles/resets.css" />
-    <link rel="stylesheet" href="/styles/base.css" />
-    <link rel="stylesheet" href="/styles/header.css" />
-    <link rel="stylesheet" href="/styles/form.css" />
-    <link rel="stylesheet" href="/styles/footer.css" />
+    <title>Sentient Analyzer</title>
   </head>
 
   <body>
@@ -18,22 +13,34 @@
 
     <main>
       <section>
-        <form class="" onsubmit="return handleSubmit(event)">
-          <input
-            id="name"
-            type="text"
-            name="input"
-            value=""
-            onblur="onBlur()"
-            placeholder="Name"
-          />
-          <input
-            type="submit"
-            name=""
-            value="submit"
-            onclick="return handleSubmit(event)"
-            onsubmit="return handleSubmit(event)"
-          />
+        <form id="form">
+          <div class="field">
+            <label for="article-url">URL</label>
+            <input
+              id="article-url"
+              type="url"
+              name="article-url"
+              placeholder="URL of your article"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="lang">Language</label>
+            <select name="lang" id="lang">
+              <option value="" selected disabled>
+                Select a Language (Optional)
+              </option>
+              <option value="en">English</option>
+              <option value="es">Español</option>
+              <option value="fr">Français</option>
+              <option value="it">Italiano</option>
+              <option value="pt">Português</option>
+              <option value="ca">Català</option>
+            </select>
+          </div>
+
+          <button disabled type="submit">Analyze</button>
         </form>
       </section>
 

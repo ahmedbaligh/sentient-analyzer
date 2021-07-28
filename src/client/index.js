@@ -1,7 +1,17 @@
-import { checkForName } from './js/nameChecker';
-import { handleSubmit } from './js/formHandler';
+import { onAnalyze } from './js/formHandler';
+import { onValidate } from './js/helpers';
 
-console.log(checkForName);
+import './styles/resets.scss';
+import './styles/base.scss';
+import './styles/header.scss';
+import './styles/footer.scss';
+import './styles/form.scss';
 
-alert('I EXIST');
-console.log('CHANGE!!');
+const form = document.querySelector('#form');
+
+document.querySelector('#article-url').onchange = ({ target }) =>
+  onValidate(form, target.validity.valid);
+
+form.onsubmit = e => onAnalyze(e);
+
+export { onAnalyze, onValidate };

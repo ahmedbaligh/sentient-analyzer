@@ -1,16 +1,22 @@
-function handleSubmit(event) {
-  event.preventDefault();
+import { getAnalysisResults } from './api';
+import updateUI from './updateUI';
 
-  // check what text was put into the form field
-  let formText = document.getElementById('name').value;
-  checkForName(formText);
+const onAnalyze = async e => {
+  e.preventDefault();
 
-  console.log('::: Form Submitted :::');
-  fetch('http://localhost:8080/test')
-    .then(res => res.json())
-    .then(function (res) {
-      document.getElementById('results').innerHTML = res.message;
-    });
-}
+  const resultsContainer = document.querySelector('#results');
+  let articleURL = document.querySelector('#article-url');
+  let lang = document.querySelector('#lang').value;
 
-export { handleSubmit };
+  // Start the API request
+  resultsContainer.classList.add('loading');
+  const data = await getAnalysisResults('/analyze', {
+    url: articleURL.value,
+    lang
+  });
+  resultsContainer.classList.remove('loading');
+
+  updateUI(data);
+};
+
+export { onAnalyze };
